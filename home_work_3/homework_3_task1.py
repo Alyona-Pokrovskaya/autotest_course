@@ -3,6 +3,7 @@
 
 def modification(lst):
 
+	# Добавлено решение задачи 1
     lst[0], lst[-1] = lst[-1], lst[0]
 
     return lst

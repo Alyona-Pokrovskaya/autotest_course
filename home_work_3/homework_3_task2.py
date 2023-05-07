@@ -4,6 +4,8 @@
 
 
 def get_list_info(lst):
+
+	# Добавлено решение задачи 2
     min_elem = min(lst)
     max_elem = max(lst)
     sum_list = sum(lst)
