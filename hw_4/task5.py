@@ -14,7 +14,31 @@
 # [4] => 1 вышел, 4 остался последним т.е. выжившим - это наш ответ survivor.
 
 def josephus_task(num_people, kill_num):
-    # Здесь нужно написать код
+    # Формируем список воинов
+    survivor_list = list(range(1, num_people + 1))
+    # Индекс текущего воина в списке
+    current = 0
+    count = 1
+
+    while len(survivor_list) > 1:
+        current = (current + 1) % len(survivor_list)
+        count = count + 1
+        # Если выходит каждый первый
+        if kill_num == 1:
+            survivor_list.pop(0)
+
+        # Если count равен kill_num, удаляем воина с текущим индексом
+        if count == kill_num:
+            survivor_list.pop(current)
+            count = 0
+            current = current - 1
+
+        # Если дошли до конца
+        if current == len(survivor_list):
+            current = 0
+
+        # Возвращаем оставшегося воина
+    survivor = survivor_list[0]
     return survivor
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
