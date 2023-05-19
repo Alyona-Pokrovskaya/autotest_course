@@ -19,7 +19,21 @@
 
 
 def everything_for_your_cat(cats_data):
-    # Здесь нужно написать код
+    cats_dict = {}
+    our_str = ""
+
+    for elem in cats_data:
+
+        key = ' '.join([elem[2], elem[3]])
+        value = ', '.join([elem[0], str(elem[1])])
+
+        if cats_dict.get(key):
+            cats_dict[key] += '; ' + value
+        else:
+            cats_dict[key] = value
+
+    for key in cats_dict:
+        our_str += f"{key}: {cats_dict[key]}\n"
     return our_str
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
