@@ -7,7 +7,16 @@
 
 
 def repeats(our_str):
-    # Здесь нужно написать код
+    letters_dict = {}
+    new_str = ""
+
+    for elem in our_str:
+        if letters_dict.get(elem):
+            letters_dict[elem] += 1
+        else:
+            letters_dict[elem] = 1
+
+        new_str += f"{elem}_{letters_dict[elem]}"
     return new_str
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ

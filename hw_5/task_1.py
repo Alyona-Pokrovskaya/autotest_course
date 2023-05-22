@@ -7,7 +7,18 @@
 
 
 def letter_stat(our_str):
-    # Здесь нужно написать код
+    # Создаем словарь
+    letters_dict = {}
+
+    # Проходим по элементам строки
+    for elem in our_str:
+        # Если у нас есть такой ключ уже в словаре
+        if letters_dict.get(elem):
+            # то увеличиваем значение ключа на 1
+            letters_dict[elem] = letters_dict[elem] + 1
+        else:
+            # иначе значение = 1
+            letters_dict[elem] = 1
     return letters_dict
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
