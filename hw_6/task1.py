@@ -12,7 +12,18 @@ string = 'Hello'
 
 
 def global_changes():
-# Здесь нужно написать код
+    global number
+    global string
+    # number += 4
+    # string += ', dear friend'
+
+    number = 5
+    string = 'Hello, dear friend'
+    return number, string
+
+
+global_changes()
+
 
 
 
