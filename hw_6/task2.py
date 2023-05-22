@@ -7,7 +7,7 @@
 def global_function():
   msg = 1
   def local_function():
-  # Здесь нужно написать код
+   # Здесь нужно написать код
    
   return msg
 
