@@ -14,7 +14,21 @@
 
 
 def scrabble(word):
-    # Здесь нужно написать код
+    points = 0
+
+    erudite_dict = {
+        **dict.fromkeys(['а', 'в', 'е', 'ё', 'и', 'н', 'о', 'р', 'с', 'т'], 1),
+        **dict.fromkeys(['д', 'к', 'л', 'м', 'п', 'у'], 2),
+        **dict.fromkeys(['б', 'г', 'ь', 'я'], 3),
+        **dict.fromkeys(['й', 'ы'], 4),
+        **dict.fromkeys(['ж', 'з', 'х', 'ц', 'ч'], 5),
+        **dict.fromkeys(['ф', 'ш', 'э', 'ю'], 8),
+        **dict.fromkeys(['щ'], 10),
+        **dict.fromkeys(['ъ'], 15)
+    }
+
+    for letter in word:
+        points += erudite_dict.get(letter)
     return points
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
