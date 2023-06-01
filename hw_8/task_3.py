@@ -7,7 +7,13 @@
 # Если исключения не произошло, то функция возвращает сумму всех координат
 
 
-# Здесь пишем код
+def segment(point1, point2):
+    try:
+        result_sum = point1[0] + point1[1] + point2[0] + point2[1]
+        return result_sum
+    except TypeError as e:
+        reverse_msg = "".join(reversed(list(str(e.args[0]))))
+        return reverse_msg
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
