@@ -34,4 +34,24 @@
 import datetime
 import time
 
-# Здесь пишем код
+
+def func_log(file_log = 'log.txt'):
+    def func_write(func):
+        def wrapper():
+            with open(file_log, 'a', encoding='utf-8') as f:
+                f.write(f'{func.__name__} вызвана {datetime.datetime.now().strftime("%d.%m %H:%M:%S")}\n')
+        return wrapper
+    return func_write
+
+
+@func_log()
+def func1():
+    time.sleep(3)
+
+@func_log(file_log='func2.txt')
+def func2():
+    time.sleep(5)
+
+func1()
+func2()
+func1()
