@@ -3,7 +3,17 @@
 # Необходимо удалить все цифры и записать получившийся текст в файл test_file/task1_answer.txt
 
 
-# Здесь пишем код
+f1 = open('test_file/task1_data.txt', mode='r', encoding='utf-8')
+
+string = ''
+for one_lines in f1.readlines():
+    for char in one_lines:
+        if not char.isdigit():
+            string = string + char
+
+f2 = open('test_file/task1_answer.txt', mode='w', encoding='utf-8')
+f2.write(string)
+f2.close()
 
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
