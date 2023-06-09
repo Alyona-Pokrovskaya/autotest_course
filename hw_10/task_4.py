@@ -4,6 +4,7 @@
 
 import pytest
 
+
 class Test:
     def test_one(self, test_fixture):
         assert 6 / 3 == 2
@@ -15,3 +16,21 @@ class Test:
     def test_three(self):
         assert 3 == 3
 
+
+class TestClass:
+    def test_one(self):
+        assert 6 / 3 == 2
+
+    def test_two(self):
+        list_test = list(range(1, 10))
+        assert list_test == [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    def test_three(self):
+        assert 3 == 3
+
+
+def test_run_test_class(test_class_fixture):
+    ob = TestClass()
+    ob.test_one()
+    ob.test_two()
+    ob.test_three()

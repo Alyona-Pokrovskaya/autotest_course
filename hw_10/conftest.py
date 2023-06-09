@@ -2,7 +2,7 @@ import time
 import pytest
 
 
-@pytest.fixture(scope='session', autouse=True)
+@pytest.fixture(scope='class', autouse=True)
 def test_class_fixture(request):
     start_time = time.time()
     print('Start time:', time.ctime(start_time))
